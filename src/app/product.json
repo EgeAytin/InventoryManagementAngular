@@ -1,0 +1,31 @@
+{
+  "product":[
+    {
+      "id":1,
+      "sku": "MYSHOES",
+      "name": "Black Running Shoes",
+      "imageUrl": "/assets/images/products/black-shoes.jpg",
+      "department": ["Men", "Shoes", "Shoes"],
+      "price": 109.99,
+      "stock": 5
+    },
+    {
+      "id":2,
+      "sku": "NEATOJACKET",
+      "name": "Blue Jacket",
+      "imageUrl": "/assets/images/products/blue-jacket.jpg",
+      "department": ["Women", "Apparel", "Jackets & Vests"],
+      "price": 238.99,
+      "stock": 3
+    },
+    {
+      "id":3,
+      "sku":"NICEHAT",
+      "name":"A Nice Black Hat",
+      "imageUrl":"/assets/images/products/black-hat.jpg",
+      "department":["Men", "Accessories", "Hats"],
+      "price": 29.99,
+      "stock": 15
+    }
+]
+}

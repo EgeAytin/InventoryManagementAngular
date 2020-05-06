@@ -9,12 +9,15 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2017",
-      "dom"
-    ]
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
+    "paths": {
+      "@InventoryManagement/services": [
+        "src/app/services/index.ts"
+      ],
+      "@InventoryManagement/models":[
+        "src/app/models/index.ts"
+      ]
+    }
   }
 }

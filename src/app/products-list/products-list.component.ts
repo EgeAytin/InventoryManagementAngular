@@ -1,5 +1,5 @@
 import { Component, OnInit, Input , Output , EventEmitter} from '@angular/core';
-import { Product } from '../product';
+import { Product } from '@InventoryManagement/models';
 
 @Component({
   selector: 'app-products-list',
@@ -14,18 +14,13 @@ import { Product } from '../product';
 
 export class ProductsListComponent implements OnInit {
 
-  /**
-  *   @Input productList :  the products[] passed to use
-  */
+  
   @Input() productList: Product;
 
-  /**
-  *   @Output onProductSelected: send event(data) to parent component.
-  */
-  @Output() onProductSelected: EventEmitter<Product>;
+  
+  @Output() onProductSelected: EventEmitter<Product>= new EventEmitter();
 
   constructor() {
-    this.onProductSelected = new EventEmitter();
   }
 
   ngOnInit() {

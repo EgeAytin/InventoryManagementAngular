@@ -1,13 +1,5 @@
-export class Product {
+import { Product } from "@InventoryManagement/models";
 
-    constructor(
-        public sku: string,
-        public name: string,
-        public imageUrl: string,
-        public department: string[],
-        public price: number,
-        public stock: number
-    ) {
-
-    }
+export class Products {
+  constructor(private product: Product) {}
 }
