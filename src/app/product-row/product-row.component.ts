@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Product } from '../product';
+import { Product } from '@InventoryManagement/models';
 
 @Component({
   selector: 'app-product-row',
