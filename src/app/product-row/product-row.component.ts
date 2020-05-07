@@ -23,6 +23,7 @@ export class ProductRowComponent implements OnInit {
   }
 
   public editProduct() {
+    localStorage.setItem('buttonType', 'edit');
     this.selectedProduct.emit(this.product);
   }
 }

@@ -14,11 +14,11 @@ import { Product } from '@InventoryManagement/models';
 
 export class ProductsListComponent implements OnInit {
 
-  
+
   @Input() productList: Product;
 
-  
-  @Output() onProductSelected: EventEmitter<Product>= new EventEmitter();
+
+  @Output() onProductSelected: EventEmitter<Product> = new EventEmitter();
 
   constructor() {
   }
