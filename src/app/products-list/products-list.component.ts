@@ -15,7 +15,7 @@ import { Product } from '@InventoryManagement/models';
 export class ProductsListComponent implements OnInit {
 
 
-  @Input() productList: Product;
+  @Input() productList: Product[];
 
 
   @Output() onProductSelected: EventEmitter<Product> = new EventEmitter();

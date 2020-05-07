@@ -27,6 +27,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.products = this.service.getAllData();
+    console.log(this.products);
     // this.service.updateDataById(2,this.testProd);
     // this.service.onCreatePost(this.testProd);
   }
