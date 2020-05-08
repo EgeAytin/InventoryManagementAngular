@@ -9,6 +9,8 @@ import {Product} from '@InventoryManagement/models';
 })
 export class ProductCrudComponent implements OnInit {
   @Input() selectedProduct: Product;
+   editProduct: Product;
+   products: Product[];
    product = {
         department: null,
         id: null,
@@ -22,7 +24,9 @@ export class ProductCrudComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.selectedProduct.id);
+     this.products = this.service.getAllData();
+     console.log(this.products);
+
     if (localStorage.getItem('buttonType') === 'edit') {
       this.product = {
         department: this.selectedProduct.department,
@@ -51,13 +55,26 @@ export class ProductCrudComponent implements OnInit {
   }
   productAdd() {
     localStorage.setItem('crudFlag', 'false');
+    this.product.id = (this.products.length + 1).toString();
     this.product.department = this.product.department.split(',');
-    /*this.service.onCreatePost(this.product);*/
+    console.log(this.product.department);
+    this.service.onCreatePost(this.product);
   }
   productEdit() {
     localStorage.setItem('crudFlag', 'false');
-    console.log(this.product)
-    this.service.updateDataById(this.product.id,  this.product);
+
+    this.product.department = this.product.department.split(',');
+    this.editProduct = {
+      department: this.product.department,
+      id: this.product.id,
+      imageUrl: this.product.imageUrl,
+      name: this.product.name,
+      price: this.product.price,
+      sku: this.product.sku,
+      stock: this.product.stock
+    };
+    console.log(this.editProduct);
+    this.service.updateDataById(this.product.id, this.editProduct);
   }
   back() {
     localStorage.setItem('crudFlag', 'false');

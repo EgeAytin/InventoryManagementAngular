@@ -25,18 +25,8 @@ export class DataServiceService {
       return this.returnData;
   }
 
-  getDataById(id: number) {
-    this.selectedData = [];
-    this.http.get(`https://angularinventorymanagement.firebaseio.com/product/${id - 1}.json`).pipe(map(data => {
-      for (const key in data) {
-          this.selectedData.push(data[key]);
-      }
-    })).subscribe();
-    return this.selectedData;
-  }
-
   updateDataById(id: number, data: Product) {
-    this.http.patch(`https://angularinventorymanagement.firebaseio.com/product.json?filterBy="${id}"`, data).subscribe();
+    this.http.put(`https://angularinventorymanagement.firebaseio.com/product/${id}.json`, data).subscribe();
   }
 
 
