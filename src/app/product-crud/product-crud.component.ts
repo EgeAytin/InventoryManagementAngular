@@ -9,8 +9,8 @@ import {Product} from '@InventoryManagement/models';
 })
 export class ProductCrudComponent implements OnInit {
   @Input() selectedProduct: Product;
-  product = {
-        department: [],
+   product = {
+        department: null,
         id: null,
         imageUrl: null,
         name: null,
@@ -23,7 +23,7 @@ export class ProductCrudComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.selectedProduct.id);
-    if (localStorage.getItem('buttonType') === 'edit'){
+    if (localStorage.getItem('buttonType') === 'edit') {
       this.product = {
         department: this.selectedProduct.department,
         id: this.selectedProduct.id,
@@ -50,13 +50,14 @@ export class ProductCrudComponent implements OnInit {
     }
   }
   productAdd() {
-    console.log(this.product);
     localStorage.setItem('crudFlag', 'false');
-    this.service.onCreatePost(this.product);
+    this.product.department = this.product.department.split(',');
+    /*this.service.onCreatePost(this.product);*/
   }
   productEdit() {
     localStorage.setItem('crudFlag', 'false');
-    this.service.updateDataById(this.product.id, this.product);
+    console.log(this.product)
+    this.service.updateDataById(this.product.id,  this.product);
   }
   back() {
     localStorage.setItem('crudFlag', 'false');

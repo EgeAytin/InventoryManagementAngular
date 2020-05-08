@@ -36,7 +36,7 @@ export class DataServiceService {
   }
 
   updateDataById(id: number, data: Product) {
-    this.http.patch(`https://angularinventorymanagement.firebaseio.com/product/${id - 1}.json`, data).subscribe();
+    this.http.patch(`https://angularinventorymanagement.firebaseio.com/product.json?filterBy="${id}"`, data).subscribe();
   }
 
 
